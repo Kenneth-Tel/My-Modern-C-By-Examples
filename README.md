@@ -11,8 +11,11 @@ My own little artifact repository from reading Modern C, third Edition.
 > [!NOTE]
 > While it's the compilers job to concatenate it, the C Standard demands this behaviour: Defined Behaviour.
 
+**Code Snipped Dropdown** 
+
 <details>
-<summary>Code Snipped for string_array_concatination.c</summary>
+<summary>Code Snipped for string_array_concatenation.c</summary>
+
 ```C
 #include <stdio.h>
 #include <stdlib.h> // for EXIT_SUCCESS
@@ -34,6 +37,7 @@ Produces:
 Hello, World! Welcome to my program! Its a cool program right?
 Wello, World! Welcome to my program! Its a cool program right?
 ```
+
 </details>
 Takeaway 5.3 #1 Consecutive string literals are concatenated.
 
