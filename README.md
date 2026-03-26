@@ -7,8 +7,6 @@ My own little artifact repository from reading Modern C, third Edition.
 - Show how C handles multi-string literals.
 - Mutable vs Immutable string Literals
 ---
-**Code Snipped Dropdown** 
-
 <details>
 <summary>Code Snipped for string_array_concatenation.c</summary>
 
@@ -34,7 +32,6 @@ Hello, World! Welcome to my program! Its a cool program right?
 Wello, World! Welcome to my program! Its a cool program right?
 ```
 </details>
----
 
 **Explanation**: The **C Standard** specifies that consecutive string literals are concatenated into a larger string.
 
