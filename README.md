@@ -10,7 +10,7 @@ This happens before the code is run.
 Mutable vs Immutable String Literals Initialization
   
 <details>
-<summary>Code Snipped</summary>
+<summary>Code Snipped 📝</summary>
 
 ```C
 #include <stdio.h>
