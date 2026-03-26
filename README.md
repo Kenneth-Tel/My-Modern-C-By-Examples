@@ -108,3 +108,21 @@ int main(int argc, [[maybe_unused]] char* argv[argc + 1]) {
     return EXIT_SUCCESS;
 }
 ```
+Produces:
+```bash
+            a: 0xFFFFFFFFFFFFFFFF
+          max: 0xFFFFFFFFFFFFFFFF
+     a == max: true
+
+         int1: 0x00000000
+         int2: 0x00000000
+ int1 == int2: true
+
+         0.0f: 0x00000000
+        -0.0f: 0x80000000
+  0.0 == -0.0: true
+
+           r1: 0x7F800000
+           r2: 0xFF800000
+     r1 == r2: false
+```
