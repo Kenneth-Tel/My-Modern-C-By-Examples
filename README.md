@@ -7,8 +7,8 @@ My own little artifact repository from reading Modern C, third Edition.
 
 **Explanation**: The **C Standard** specifies that consecutive string literals are concatenated into a larger string.
 
-> [!IMPORTANT]
-> The **C Standard** specifies that consecutive string literals are concatenated into a larger string.
+> [!NOTE]
+> While it's the compilers job to concatenate it, the C Standard demands this behaviour: Defined Behaviour.
 
 ```C
 #include <stdio.h>
