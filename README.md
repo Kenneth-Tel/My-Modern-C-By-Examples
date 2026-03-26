@@ -1,14 +1,17 @@
 # My-Modern-C-By-Examples
 My own little artifact repository from reading Modern C, third Edition.
 
-## Code Snippets
-### --- String Arrays and Concatenation ---
+##1. String Arrays and Concatenation
+**The Concept**
+The C Standard specifies that adjacent string literals are concatenated into a single literal during compilation. 
+This happens before the code is run.
+
 **Goal**
 - Show how C handles multi-string literals.
 - Mutable vs Immutable string Literals
----
+  
 <details>
-<summary>Code Snipped for string_array_concatenation.c</summary>
+<summary>Code Snipped</summary>
 
 ```C
 #include <stdio.h>
@@ -40,7 +43,7 @@ Wello, World! Welcome to my program! Its a cool program right?
 
 Takeaway 5.3 #1 Consecutive string literals are concatenated.
 
-### --- Values and Representation. ---
+##2. Values and Representation.
 > [!WARNING]  
 > It started off as a C abstract machine note, but then it diverges into something else.
 
