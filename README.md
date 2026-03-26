@@ -30,7 +30,8 @@ Wello, World! Welcome to my program! Its a cool program right?
 Takeaway 5.3 #1 Consecutive string literals are concatenated.
 
 ### Values and Representation.
-Note: It started off as a C abstract machine note, but then it diverges into something else.
+> [!WARNING]  
+> It started off as a C abstract machine note, but then it diverges into something else.
 
 ```C
 #include <stdio.h>
