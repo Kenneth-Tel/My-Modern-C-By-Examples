@@ -7,10 +7,6 @@ My own little artifact repository from reading Modern C, third Edition.
 - Show how C handles multi-string literals.
 - Mutable vs Immutable string Literals
 
-**Explanation**: The **C Standard** specifies that consecutive string literals are concatenated into a larger string.
-> [!NOTE]
-> While it's the compilers job to concatenate it, the C Standard demands this behaviour: Defined Behaviour.
-
 **Code Snipped Dropdown** 
 
 <details>
@@ -39,6 +35,12 @@ Wello, World! Welcome to my program! Its a cool program right?
 ```
 
 </details>
+
+**Explanation**: The **C Standard** specifies that consecutive string literals are concatenated into a larger string.
+
+> [!NOTE]
+> While it's the compilers job to concatenate it, the C Standard demands this behaviour: Defined Behaviour.
+
 Takeaway 5.3 #1 Consecutive string literals are concatenated.
 
 ### --- Values and Representation. ---
