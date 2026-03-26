@@ -3,9 +3,16 @@ My own little artifact repository from reading Modern C, third Edition.
 
 ## Code Snippets
 ### --- String Arrays and Concatenation ---
+**Goal**
+- Show how C handles multi-string literals.
+- Mutable vs Immutable string Literals
+
 **Explanation**: The **C Standard** specifies that consecutive string literals are concatenated into a larger string.
 > [!NOTE]
 > While it's the compilers job to concatenate it, the C Standard demands this behaviour: Defined Behaviour.
+
+<details>
+<summary>Code Snipped for string_array_concatination.c</summary>
 ```C
 #include <stdio.h>
 #include <stdlib.h> // for EXIT_SUCCESS
@@ -27,6 +34,7 @@ Produces:
 Hello, World! Welcome to my program! Its a cool program right?
 Wello, World! Welcome to my program! Its a cool program right?
 ```
+</details>
 Takeaway 5.3 #1 Consecutive string literals are concatenated.
 
 ### --- Values and Representation. ---
