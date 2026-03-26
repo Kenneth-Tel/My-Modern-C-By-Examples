@@ -4,9 +4,12 @@ My own little artifact repository from reading Modern C, third Edition.
 ## Code Snippets
 <details>
 <summary>String Arrays and Concatenation</summary>
-Explanation: The **C Standard** specifies that consecutive string literals are concatenated into a larger string.
+
+**Explanation**: The **C Standard** specifies that consecutive string literals are concatenated into a larger string.
+
 > [!IMPORTANT]
-> Key information users need to know to achieve their goal.
+> The **C Standard** specifies that consecutive string literals are concatenated into a larger string.
+
 ```C
 #include <stdio.h>
 #include <stdlib.h> // for EXIT_SUCCESS
