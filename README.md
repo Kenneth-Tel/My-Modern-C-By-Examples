@@ -4,7 +4,7 @@ My own little artifact repository from reading Modern C, third Edition.
 ## Code Snippets
 ### String Arrays and Concatenation
 **Explanation**: The **C Standard** specifies that consecutive string literals are concatenated into a larger string.
-> [!IMPORTANT]
+> [!NOTE]
 > While it's the compilers job to concatenate it, the C Standard demands this behaviour: Defined Behaviour.
 ```C
 #include <stdio.h>
@@ -29,4 +29,4 @@ Wello, World! Welcome to my program! Its a cool program right?
 ```
 Takeaway 5.3 #1 Consecutive string literals are concatenated.
 
-### Something here
+### New Snippet here
