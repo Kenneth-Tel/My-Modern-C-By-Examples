@@ -2,10 +2,11 @@
 My own little artifact repository from reading Modern C, third Edition.
 
 ## Code Snippets
-### String Arrays and Concatenation
-_Takeaway 5.3 #1 Consecutive string literals are concatenated._
+<details>
+<summary>String Arrays and Concatenation</summary>
 Explanation: The **C Standard** specifies that consecutive string literals are concatenated into a larger string.
-- Note: While it's the compilers job to concatenate it, the C Standard demands this behaviour: Defined Behaviour.
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
 ```C
 #include <stdio.h>
 #include <stdlib.h> // for EXIT_SUCCESS
@@ -27,3 +28,6 @@ Produces:
 Hello, World! Welcome to my program! Its a cool program right?
 Wello, World! Welcome to my program! Its a cool program right?
 ```
+Takeaway 5.3 #1 Consecutive string literals are concatenated.
+</details>
+
