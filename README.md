@@ -100,7 +100,7 @@ int main(int argc, [[maybe_unused]] char* argv[argc + 1]) {
     // See https://open-std.org/JTC1/SC22/WG14/www/docs/n3550.pdf#chapter.0.13
     // However, it's bad practice do divide by zero, since the C standard (technically) does not define this behaviour, only IEE 754: See __STDC_IEC_559__ (old). __STDC_IEC_60559_BFP__ (new) (Note: --fast-math silently breaks IEEE 754)
     // Usually when you compile without flags, the compiler checks your hardware and chooses accordingly.
-    // TLDR: floating points are weird. Don't use them unless (absolutely) necessary.
+    // TLDR: floating points are weird. Make sure you understand them, before you make something complex.
     
     printBits("r1: ", &r1, sizeof(r1));
     printBits("r2: ", &r2, sizeof(r2));
