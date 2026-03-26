@@ -1,6 +1,6 @@
 # My Modern C23 By Examples
 While reading Modern C, Third Edition, some thoughts came up about the implementation of what was being told.
-\nThis is suppose to be a scratchpad like repository, to collect my thought.
+This is suppose to be a scratchpad like repository, to collect my thought.
 
 Some snippets are short and concise. Some are longer and more convoluted.
 
