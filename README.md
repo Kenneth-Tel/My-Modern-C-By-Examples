@@ -1,7 +1,7 @@
 # My-Modern-C-By-Examples
 My own little artifact repository from reading Modern C, third Edition.
 
-##1. String Arrays and Concatenation
+## 1. String Arrays and Concatenation
 **The Concept**
 The C Standard specifies that adjacent string literals are concatenated into a single literal during compilation. 
 This happens before the code is run.
