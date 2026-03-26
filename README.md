@@ -1,5 +1,8 @@
-# My-Modern-C-By-Examples
-My own little artifact repository from reading Modern C, third Edition.
+# My Modern C23 By Examples
+While reading Modern C, Third Edition, some thoughts came up about the implementation of what was being told.
+This is suppose to be a scratch-pad like repository, to collect my thought.
+
+Some snippets are short and concise. Some are longer and more convoluted.
 
 ## 1. String Arrays and Concatenation
 **The Concept**
