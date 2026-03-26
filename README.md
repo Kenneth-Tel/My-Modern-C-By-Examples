@@ -34,3 +34,5 @@ Wello, World! Welcome to my program! Its a cool program right?
 Takeaway 5.3 #1 Consecutive string literals are concatenated.
 </details>
 
+> [!NOTE]
+> While it's the compilers job to concatenate it, the C Standard demands this behaviour: Defined Behaviour.
