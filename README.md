@@ -2,7 +2,8 @@
 My own little artifact repository from reading Modern C, third Edition.
 
 ## Code Snippets
-[[string_array_concatenation.c]]
+### Takeaway 5.3 #1 Consecutive string literals are concatenated.
+[string_array_concatenation.c]
 ```C
 #include <stdio.h>
 #include <stdlib.h> // for EXIT_SUCCESS
