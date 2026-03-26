@@ -2,7 +2,7 @@
 My own little artifact repository from reading Modern C, third Edition.
 
 ## Code Snippets
-### String Arrays and Concatenation
+### --- String Arrays and Concatenation ---
 **Explanation**: The **C Standard** specifies that consecutive string literals are concatenated into a larger string.
 > [!NOTE]
 > While it's the compilers job to concatenate it, the C Standard demands this behaviour: Defined Behaviour.
@@ -29,7 +29,7 @@ Wello, World! Welcome to my program! Its a cool program right?
 ```
 Takeaway 5.3 #1 Consecutive string literals are concatenated.
 
-### Values and Representation.
+### --- Values and Representation. ---
 > [!WARNING]  
 > It started off as a C abstract machine note, but then it diverges into something else.
 
