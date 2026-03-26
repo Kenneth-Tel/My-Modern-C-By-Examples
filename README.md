@@ -36,9 +36,8 @@ Wello, World! Welcome to my program! Its a cool program right?
 </details>
 
 > [!NOTE]
-> While it's the compilers job to concatenate it, the C Standard demands this behaviour: Defined Behaviour.
-
-Takeaway 5.3 #1 Consecutive string literals are concatenated.
+> 1. Takeaway 5.3 #1 Consecutive string literals are concatenated.
+> 2. While it's the compilers job to concatenate it, the C Standard demands this behaviour: Defined Behaviour.
 
 ## 2. Values and Representation.
 > [!WARNING]  
