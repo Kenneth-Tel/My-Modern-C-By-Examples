@@ -7,7 +7,7 @@ Some snippets are short and concise. Some are longer and more convoluted.
 ## 1. String Arrays and Concatenation
 **The Concept**
 
-The C Standard specifies that adjacent string literals are concatenated into a single literal during compilation. 
+The C Standard specifies that multi-string literals are concatenated into a single literal during compilation. 
 This happens before the code is run.
 
 Mutable vs Immutable String Literals Initialization
