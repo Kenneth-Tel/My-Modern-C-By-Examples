@@ -198,6 +198,9 @@ hexSize_t  = 2147483648
 ```
 </details>
 
+<details>
+<summary>Hex Inference Explanation</summary>
+
 I feel like the point of this code is a bit opaque, so lets trim the fat.
 
 ```C
@@ -225,6 +228,7 @@ Case B: long hexLong = -0x8000'0000;
 - We try to store 2,147,483,648 into a long.
 - Assuming a 64-bit long, this value fits comfortably.
 - Result: 2147483648.
+</details>
 
 > [!NOTE]
 > 1. Takeaway 5.1.2 #1 All values have a type that is statically determined.
