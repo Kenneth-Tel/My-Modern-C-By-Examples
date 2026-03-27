@@ -5,8 +5,6 @@ This is suppose to be a scratchpad like repository, to collect my thought.
 Some snippets are short and concise. Some are longer and more convoluted.
 
 ## 1. String Arrays and Concatenation
-**The Concept**
-
 The C Standard specifies that multi-string literals are concatenated into a single literal during compilation. 
 This happens before the code is run.
 
@@ -43,9 +41,14 @@ Wello, World! Welcome to my program! Its a cool program right?
 > 2. While it's the compilers job to concatenate it, the C Standard demands this behaviour: Defined Behaviour.
 
 ## 2. Values and Representation.
+This sections explains why, with C's abstract state model, values are compared only with semantic value, rather than bit representaion.
+Meaning (0.0f == -0.0f) yields true, even though they have different bit patterns.
+
 > [!WARNING]  
 > It started off as a C abstract machine note, but then it diverges into something else.
 
+<details>
+<summary>📝 Code Snippet</summary>
 ```C
 #include <stdio.h>
 #include <stdlib.h> // for EXIT_SUCCESS
@@ -140,3 +143,4 @@ Produces:
            r2: 0xFF800000
      r1 == r2: false
 ```
+</details>
