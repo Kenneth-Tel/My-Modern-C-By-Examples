@@ -205,6 +205,27 @@ int hexInt = -0x8000'0000;      // yields -2147483648
 long hexLong = -0x8000'0000;    // yields 2147483648
 ```
 
+What type is 0x8000'0000?
+1. That hex pattern has the value: 2,147,483,648.
+2. That value does not fit within a standard 32-bit signed int (max 2,147,483,647).
+3. However, it fits perfectly within an unsigned int (max 4,294,967,295).
+4. Per C/C++ rules, the literal 0x8000'0000 is assigned the type unsigned int.
+5. The unary minus operator is applied. Since the operand is unsigned, the calculation follows unsigned arithmetic rules (wrapping around).
+6. The result of -0x8000'0000 is 2,147,483,648, but the type is still unsigned int.
+
+Now, look at the assignments:
+
+Case A: int hexInt = -0x8000'0000;
+- We try to store 2,147,483,648 into a signed int.
+- This exceeds the maximum limit of a signed int.
+- On two's complement systems, the bits (0x8000'0000) are reinterpreted as a negative number.
+- Result: -2147483648.
+
+Case B: long hexLong = -0x8000'0000;
+- We try to store 2,147,483,648 into a long.
+- Assuming a 64-bit long, this value fits comfortably.
+- Result: 2147483648.
+
 > [!NOTE]
 > 1. Takeaway 5.1.2 #1 All values have a type that is statically determined.
 > 2. Takeaway 5.3 #6 Don’t use binary, octal, or hexadecimal literals for negative values
