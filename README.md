@@ -49,6 +49,7 @@ Meaning (0.0f == -0.0f) yields true, even though they have different bit pattern
 
 <details>
 <summary>📝 Code Snippet</summary>
+
 ```C
 #include <stdio.h>
 #include <stdlib.h> // for EXIT_SUCCESS
