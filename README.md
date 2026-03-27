@@ -198,6 +198,13 @@ hexSize_t  = 2147483648
 ```
 </details>
 
+I feel like the point of this code is a bit opaque, so lets trim the fat.
+
+```C
+int hexInt = -0x8000'0000;      // yields -2147483648
+long hexLong = -0x8000'0000;    // yields 2147483648
+```
+
 > [!NOTE]
 > 1. Takeaway 5.1.2 #1 All values have a type that is statically determined.
 > 2. Takeaway 5.3 #6 Don’t use binary, octal, or hexadecimal literals for negative values
