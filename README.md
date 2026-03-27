@@ -201,7 +201,8 @@ hexSize_t  = 2147483648
 <details>
 <summary>Hex Inference Explanation</summary>
 
-I feel like the point of this code is a bit opaque, so lets trim the fat.
+
+I feel like the point of the code above is a bit opaque, so lets trim the fat.
 
 ```C
 int hexInt = -0x8000'0000;      // yields -2147483648
