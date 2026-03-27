@@ -147,6 +147,8 @@ Produces:
 </details>
 
 ## 3. Implicit Type Inference on Literals
+In C, all values must have a type, including literals.
+Without suffixes to indicate the literal type, the type must be inferred, in accordance with the C23 standard and notably __STDC_IEC_60559_BFP__.
 
 <details>
 <summary>📝 Code Snippet</summary>
@@ -163,9 +165,7 @@ int main(int argc, [[maybe_unused]] char* argv[argc + 1]) {
     float b = 12E-1; // Negative scalars for the exponent are valid floating point numerical literals, only 1 operation is happening.
     printf("%d, %f\n", a, b);
 
-    // Takeaway 5.1.2 #1 All values have a type that is statically determined.
-    // If you want to manually control the types for a literal, you use suffixes do indicate it.
-    // Otherwise, the C standard has a hierarchy for type assignment for literals. Eg, ints: int -> long -> long long
+    // The C standard has a hierarchy for type assignment for literals. Eg, ints: int -> long -> long long
 
     // For Hex/Octal/Binary, is can get a bit funky: int -> unsigned int -> long -> ...
     printf("INT  : [%d;%d]\n", INT_MIN, INT_MAX);
@@ -177,8 +177,6 @@ int main(int argc, [[maybe_unused]] char* argv[argc + 1]) {
     size_t hexSize_t = -0x8000'0000;
 
     printf("intMax     = %d\nhexInt    = %d\nhexLong    = %ld\nhexSize_t  = %zu\n", intMax, hexInt, hexLong, hexSize_t);
-
-    // Takeaway 5.3 #6 Don’t use binary, octal, or hexadecimal literals for negative values
 
     // int hexD = -0x80000000 * 2; 0
     // int hexD = -0x80000000 * 1.5; This actually gets nuanced.
@@ -198,4 +196,9 @@ hexInt    = -2147483648
 hexLong    = 2147483648
 hexSize_t  = 2147483648
 ```
-<details>
+</details>
+
+> [!NOTE]
+> 1. Takeaway 5.1.2 #1 All values have a type that is statically determined.
+> 2. Takeaway 5.3 #6 Don’t use binary, octal, or hexadecimal literals for negative values
+> 3. If you want to manually control the types for a literal, you use suffixes do indicate it.
