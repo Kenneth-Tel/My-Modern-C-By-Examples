@@ -148,6 +148,9 @@ Produces:
 
 ## 3. Implicit Type Inference on Literals
 
+<details>
+<summary>📝 Code Snippet</summary>
+
 ```C
 #include <stdio.h>
 
@@ -195,4 +198,4 @@ hexInt    = -2147483648
 hexLong    = 2147483648
 hexSize_t  = 2147483648
 ```
-
+<details>
