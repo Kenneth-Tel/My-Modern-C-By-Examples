@@ -238,7 +238,7 @@ Case B: long hexLong = -0x8000'0000;
 
 
 ## 4. Enum Initialization.
-Enums is used to connect data through our meaning of the data.
+Enums are used to connect data through our meaning of the data.
 In other words, we can imbue our own semantics into the data organization.
 By convention, we add aName_num, at the end of the enum, to indicate how big an object should be to contain each connected data point.
 
@@ -248,33 +248,31 @@ By convention, we add aName_num, at the end of the enum, to indicate how big an 
 
 ```C
 #include <stdio.h>
+#include <stdlib.h>
 
-#include <stdlib.h> // for EXIT_SUCCESS
-#include <limits.h> // for [TYPE]_MAX & [TYPE]_MIN
-
-// Assume 64bit x86
 int main(int argc, [[maybe_unused]] char* argv[argc + 1]) {
-    int a = -1; //  Negative scalars are not valid numerical literals. We are performing 2 operations, a unary minus, then an assignment operator.
-    float b = 12E-1; // Negative scalars for the exponent are valid floating point numerical literals, only 1 operation is happening.
-    printf("%d, %f\n", a, b);
+    enum brands : unsigned char { nike, uniqlo, hm, under_armor, gucci, brands_num };
 
-    // The C standard has a hierarchy for type assignment for literals. Eg, ints: int -> long -> long long
+    char const* const brand_name[brands_num] = { 
+        [nike] = "Nike",
+        [uniqlo] = "Uniqlo",
+        [hm] = "H&M",
+        [under_armor] = "Under Armor",
+        [gucci] = "Gucci",
+    };
 
-    // For Hex/Octal/Binary, is can get a bit funky: int -> unsigned int -> long -> ...
-    printf("INT  : [%d;%d]\n", INT_MIN, INT_MAX);
-    printf("LONG : [%ld;%ld]\n", LONG_MIN, LONG_MAX);
+    // only x64. Should use uint64_t
+    size_t const revenue[brands_num] = {
+        [nike] = 51'500'000'000,
+        [uniqlo] = 22'500'000'000,
+        [hm] = 23'500'000'000,
+        [under_armor] = 5'600'000'000,
+        [gucci] = 10'000'000'000,
+    };
 
-    int intMax = 0x7FFF'FFFF; 
-    int hexInt = -0x8000'0000; 
-    long hexLong = -0x8000'0000;
-    size_t hexSize_t = -0x8000'0000;
-
-    printf("intMax     = %d\nhexInt    = %d\nhexLong    = %ld\nhexSize_t  = %zu\n", intMax, hexInt, hexLong, hexSize_t);
-
-    // int hexD = -0x80000000 * 2; 0
-    // int hexD = -0x80000000 * 1.5; This actually gets nuanced.
-    // In general: FE_INVALID, then, Unspecified Behaviour: See https://open-std.org/JTC1/SC22/WG14/www/docs/n3550.pdf#subsection.0.15.4.2. Under __STDC_IEC_60559_BFP__. However, using --ffast-math, it defaults to C23 standard, and becomes Undefined Behaviour
-    // int hexD = -0x80000000L * 2; Platform dependent, OS dependent => Implementation Defined
+    for (size_t i = 0; i < brands_num; ++i) {
+        printf("%s's revenue in 2025 is %zu\n", brand_name[i], revenue[i]);
+    }
 
     return EXIT_SUCCESS;
 }
