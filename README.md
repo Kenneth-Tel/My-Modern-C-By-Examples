@@ -235,3 +235,56 @@ Case B: long hexLong = -0x8000'0000;
 > 1. Takeaway 5.1.2 #1 All values have a type that is statically determined.
 > 2. Takeaway 5.3 #6 Don’t use binary, octal, or hexadecimal literals for negative values
 > 3. If you want to manually control the types for a literal, you use suffixes do indicate it.
+
+
+## 4. Enum Initialization.
+Enums is used to connect data through our meaning of the data.
+In other words, we can imbue our own semantics into the data organization.
+By convention, we add aName_num, at the end of the enum, to indicate how big an object should be to contain each connected data point.
+
+
+<details>
+<summary>📝 Code Snippet</summary>
+
+```C
+#include <stdio.h>
+
+#include <stdlib.h> // for EXIT_SUCCESS
+#include <limits.h> // for [TYPE]_MAX & [TYPE]_MIN
+
+// Assume 64bit x86
+int main(int argc, [[maybe_unused]] char* argv[argc + 1]) {
+    int a = -1; //  Negative scalars are not valid numerical literals. We are performing 2 operations, a unary minus, then an assignment operator.
+    float b = 12E-1; // Negative scalars for the exponent are valid floating point numerical literals, only 1 operation is happening.
+    printf("%d, %f\n", a, b);
+
+    // The C standard has a hierarchy for type assignment for literals. Eg, ints: int -> long -> long long
+
+    // For Hex/Octal/Binary, is can get a bit funky: int -> unsigned int -> long -> ...
+    printf("INT  : [%d;%d]\n", INT_MIN, INT_MAX);
+    printf("LONG : [%ld;%ld]\n", LONG_MIN, LONG_MAX);
+
+    int intMax = 0x7FFF'FFFF; 
+    int hexInt = -0x8000'0000; 
+    long hexLong = -0x8000'0000;
+    size_t hexSize_t = -0x8000'0000;
+
+    printf("intMax     = %d\nhexInt    = %d\nhexLong    = %ld\nhexSize_t  = %zu\n", intMax, hexInt, hexLong, hexSize_t);
+
+    // int hexD = -0x80000000 * 2; 0
+    // int hexD = -0x80000000 * 1.5; This actually gets nuanced.
+    // In general: FE_INVALID, then, Unspecified Behaviour: See https://open-std.org/JTC1/SC22/WG14/www/docs/n3550.pdf#subsection.0.15.4.2. Under __STDC_IEC_60559_BFP__. However, using --ffast-math, it defaults to C23 standard, and becomes Undefined Behaviour
+    // int hexD = -0x80000000L * 2; Platform dependent, OS dependent => Implementation Defined
+
+    return EXIT_SUCCESS;
+}
+```
+Produces: 
+```bash
+Nike's revenue in 2025 is 51500000000
+Uniqlo's revenue in 2025 is 22500000000
+H&M's revenue in 2025 is 23500000000
+Under Armor's revenue in 2025 is 5600000000
+Gucci's revenue in 2025 is 10000000000
+```
+</details>
